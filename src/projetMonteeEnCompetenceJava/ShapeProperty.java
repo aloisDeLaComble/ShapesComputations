@@ -16,7 +16,7 @@ public class ShapeProperty {
 	}
 	
 	public String toString(){
-		return "The shape's" + propertyTypeToString() + "is of" + Double.toString(value);
+		return "The shape's " + propertyTypeToString() + " is of " + Double.toString(value);
 	}
 	
 	private String propertyTypeToString(){
