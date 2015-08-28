@@ -83,8 +83,7 @@ try {
 shape = ShapeFactory.createShapeFromPoints(points);
 } catch (UnhandledNumberOfPointsException e) {
 
-// TODO Auto-generated catch block
-e.printStackTrace();
+	  return "The number of points is not handled as a shape.";
 
 }
 
