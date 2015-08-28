@@ -16,7 +16,7 @@ public class ShapesMain {
 
 	public static void main(String[] args) {
 		try{
-		Shape shape1 = ShapeFactory.createShapeFromConsole();
+		Shape shape1 = ShapeFactoryFromConsole.createShapeFromConsole();
 		String[] computableShapeParameters = {"Perimeter","Area"};
 		Integer defaultChoiceID = 0;
 		JOptionPane jOptionPane = new JOptionPane();

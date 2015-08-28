@@ -20,7 +20,8 @@ import javax.ws.rs.core.UriInfo;
 
 
 @Path("/addformtreatment")
-public class AddFormTreatment {
+public class CreateShape {
+	  ShapesDAO shapesDAO;
 
 
   @Context
@@ -102,10 +103,11 @@ shape = ShapeFactory.createShapeFromPoints(points);
   }
 
 
-  ShapesDAO.addShapeWithProperty(shape, property);
-  return property.toString();
+  shapesDAO.addShapeWithProperty(shape, property);
+  return Double.toString(shapesDAO.getLastIndex());
 		
   }
+  
 
 
   
