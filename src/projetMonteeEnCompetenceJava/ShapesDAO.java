@@ -11,6 +11,7 @@ public class ShapesDAO {
 		  this.shapeWithPropertyMap = new HashMap<>();
 		  this.lastIndex = 0;
 	  }
+	 
 	  
 	  public void addShapeWithProperty(ShapeWithProperty shapeWithProperty){
 		  lastIndex += 1;
@@ -29,6 +30,14 @@ public class ShapesDAO {
 	  
 	  public Integer getLastIndex(){
 		  return lastIndex;
+	  }
+	  
+	  public Double getPerimeter(Integer shapeId){
+		  return shapeWithPropertyMap.get(shapeId).shape.perimeter();
+	  }
+	  
+	  public Double getArea(Integer shapeId){
+		  return shapeWithPropertyMap.get(shapeId).shape.area();
 	  }
 	  
 

@@ -11,8 +11,8 @@ import javax.ws.rs.PathParam;
 
 @Path("/displayshapeproperty")
 public class DisplayShapeProperty {
-	
-	ShapesDAO shapesDAO;
+
+	  ShapesDAO shapesDAO = ShapesDAOsAdministrator.getShapesDAO(1);
 
 
 	  @Context
@@ -26,24 +26,21 @@ public class DisplayShapeProperty {
 
 	  
 	  @GET
-	  @Path("/{name}")
+	  @Path("/{shapeId}/Perimeter")
 	  @Produces(MediaType.TEXT_HTML)
-	  public String sayHtmlHellooooo(
-			  @PathParam("name") String name) {
-		  
-		//  return "<html><body><p> Hiiii,<br/> Welcome "+name+"</p></body></html>";
-		  if(name.equals("oui")){
-			return "oui";
-		 }
-		  else if(name.equals(null)){
-			  return "name est nul";
-		  }
-		  else if(name.equals("")){
-			  return "name est vide";
-			  }
-		  else{
-		  return name;
-		  }
-		  
+	  public String DisplayShapePerimeter(
+			  @PathParam("shapeId") Integer shapeId) {
+		  Double perimeter = shapesDAO.getPerimeter(shapeId);
+		  return "The shape whose id is " + shapeId + " has the following perimeter, " + perimeter;
 	  }
+	  
+	  @GET
+	  @Path("/{shapeId}/Area")
+	  @Produces(MediaType.TEXT_HTML)
+	  public String DisplayShapeArea(
+			  @PathParam("shapeId") Integer shapeId) {
+		  Double area = shapesDAO.getArea(shapeId);
+		  return "The shape whose id is " + shapeId + " has the following area, " + area;
+	  }
+	  
 }
