@@ -16,10 +16,10 @@ public class ShapeProperty {
 	}
 	
 	public String toString(){
-		return "The shape property " + propertyTypeToString() + " is of " + Double.toString(value);
+		return "The shape property " + propertyTypeToString() + " is of " + propertyValueToString();
 	}
 	
-	private String propertyTypeToString(){
+	public String propertyTypeToString(){
 		if(propertyType.equals(propertyTypes.area)){
 			return "area";
 		}
@@ -27,5 +27,9 @@ public class ShapeProperty {
 		{
 			return "perimeter";
 		}
+	}
+	
+	public String propertyValueToString(){
+		return Double.toString(value);
 	}
 }

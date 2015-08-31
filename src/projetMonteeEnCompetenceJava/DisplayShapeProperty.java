@@ -20,10 +20,6 @@ public class DisplayShapeProperty {
 	  @Context
 	  Request request;
 	  
-	 // public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		//          handleRequest(req, res);
-		  //    }
-
 	  
 	  @GET
 	  @Path("/{shapeId}/Perimeter")

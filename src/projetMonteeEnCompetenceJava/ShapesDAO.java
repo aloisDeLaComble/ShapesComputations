@@ -40,6 +40,13 @@ public class ShapesDAO {
 		  return shapeWithPropertyMap.get(shapeId).shape.area();
 	  }
 	  
+	  public String propertyTypeToString(Integer shapeId){
+		  return shapeWithPropertyMap.get(shapeId).property.propertyTypeToString();
+	  }
+	  
+	  public String propertyValueToString(Integer shapeId){
+		  return shapeWithPropertyMap.get(shapeId).property.propertyValueToString();
+	  }
 
 
 }
