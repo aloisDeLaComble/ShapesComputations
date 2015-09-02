@@ -22,6 +22,13 @@ public class DisplayShapeProperty {
 	  
 	  
 	  @GET
+	  @Produces(MediaType.APPLICATION_JSON)
+	  public String DisplayLastShapeProperty() {
+		  //return shapesDAO.getLastShapeWithProperty();
+		  return "Hello World.";
+	  }
+	  
+	  @GET
 	  @Path("/{shapeId}/Perimeter")
 	  @Produces(MediaType.TEXT_HTML)
 	  public String DisplayShapePerimeter(
@@ -32,7 +39,7 @@ public class DisplayShapeProperty {
 	  
 	  @GET
 	  @Path("/{shapeId}/Area")
-	  @Produces(MediaType.TEXT_HTML)
+	  @Produces(MediaType.APPLICATION_JSON)
 	  public String DisplayShapeArea(
 			  @PathParam("shapeId") Integer shapeId) {
 		  Double area = shapesDAO.getArea(shapeId);

@@ -6,6 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Request;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.PathParam;
 
@@ -21,30 +22,24 @@ public class RequestsRecord {
 		  Request request;
 		  
 		  @GET
-		  @Produces(MediaType.TEXT_HTML)
-		  public String DisplayWholeRecord() {
-			  return RecordBetweenIdsToString(1,shapesDAO.getLastIndex());
+		  @Produces(MediaType.APPLICATION_JSON)
+		  public Response DisplayWholeRecord() {
+			  return Response.ok().entity(shapesDAO).build();
 		  }
 		  
 		  @GET
+		  @Produces(MediaType.APPLICATION_JSON)
 		  @Path("/{firstId}/{lastId}")
-		  @Produces(MediaType.TEXT_HTML)
-		  public String DisplayRecordBetweenIds(
+		  public Response DisplayRecordBetweenIds(
 				  @PathParam("firstId") Integer firstId,
 				  @PathParam("lastId") Integer lastId){
 			  return RecordBetweenIdsToString(firstId,lastId);
 		  }
 		  
-		 private String RecordBetweenIdsToString(Integer firstId, Integer lastId){
-			 String tableToReturn = "<table><tr><th>Shape Id</th><th><Parameter Type</th><th>Parameter Value</th></tr>";
-			  for(Integer id=firstId; id<=lastId; id++){
-				  tableToReturn += "<tr>"
-				  		+ "<td>"+ id + "<td>"
-						+ "<td>" + shapesDAO.propertyTypeToString(id) + "</td>"
-				  		+ "<td>" + shapesDAO.propertyValueToString(id) + "</td>"
-				  		+ "</tr>";
-			  }
-			  return tableToReturn + "</table>";
+		 private Response RecordBetweenIdsToString(Integer firstId, Integer lastId){
+			 return Response.ok().entity(shapesDAO.getLastShapeWithProperty().property).build();
 		 }
+		 
+		 
 	}
 

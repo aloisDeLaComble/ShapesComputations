@@ -2,6 +2,8 @@ package projetMonteeEnCompetenceJava;
 
 import java.util.HashMap;
 import java.util.Map;
+import javax.xml.bind.annotation.XmlRootElement;
+
 
 public class ShapesDAO {
 	  private Map<Integer,ShapeWithProperty> shapeWithPropertyMap = new HashMap<>();

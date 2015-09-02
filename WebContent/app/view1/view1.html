@@ -1,0 +1,14 @@
+<input type="text" data-ng-model="name" placeholder="Type your name here"/>
+<input type="button" value="Add Name" data-ng-click="addName()"/>
+<br/>
+
+<h1>Helloow, </h1>
+<hr/>
+<ul>
+<li data-ng-repeat="nom in names">
+<p>{{nom.name}}</p>
+</li>
+<div data-ng-controller="RequestRecordCtrl">
+	{{request}}
+</div>
+</ul>

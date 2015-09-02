@@ -38,7 +38,7 @@ public class CreateShape {
   
   // This method is called if TEXT_PLAIN is request
   @GET
-  @Produces(MediaType.TEXT_PLAIN)
+  @Produces(MediaType.APPLICATION_JSON)
   public String sayPlainTextHello() {
     return "No data was sent !";
   }
@@ -52,7 +52,7 @@ public class CreateShape {
 
   
   @POST
-  @Produces(MediaType.TEXT_HTML)
+  @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
   public String addShapeWithProperty(
   @FormParam("x1") Double x1,
