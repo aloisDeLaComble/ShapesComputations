@@ -1,9 +1,6 @@
 package shapesInJava;
 
-import javax.xml.bind.annotation.XmlRootElement;
 
-
-@XmlRootElement
 public class Point {
 	
 	private double x;
