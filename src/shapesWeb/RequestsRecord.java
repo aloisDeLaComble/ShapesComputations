@@ -2,6 +2,8 @@ package shapesWeb;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
@@ -23,9 +25,10 @@ public class RequestsRecord {
 	
 		  
 		  @GET
-		  public Response DisplayWholeRecord() {
+		  @Produces({MediaType.APPLICATION_JSON})
+		  public Point DisplayWholeRecord() {
 			  Point point = new Point(10.0,10.1);
-			  return Response.ok().entity(point).build();
+			  return point;
 		  }
 		  
 		  
